@@ -1,0 +1,9 @@
+node_modules
+vendor
+
+.idea
+
+/cache
+/cfg/config.*.json
+/logs
+/modules/*/*/module.config.json

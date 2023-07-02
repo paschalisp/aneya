@@ -1,0 +1,23 @@
+#!/usr/bin/php
+<?php
+#region Get to project's root directory
+$path = getcwd();
+while (!file_exists('aneya.php')) {
+	$path = pathinfo($path, PATHINFO_DIRNAME);
+	if ($path == '/') {
+		echo "Not inside an aneya project\n";
+		exit;
+	}
+	chdir($path);
+}
+#endregion
+
+if (in_array('--build', $_SERVER['argv']))
+	define('___BUILD___', true);
+
+require_once 'aneya.php';
+require_once 'modules/aneya/cli/classes/CLI/CLI.php';
+
+$cli = new aneya\CLI\CLI();
+
+$cli->run();

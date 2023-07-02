@@ -1,0 +1,27 @@
+{
+	"tag": "cli",
+	"version": "1.0.0.0",
+	"name": "CLI",
+	"description": "aneya Framework's command-line interface",
+	"className": "CLI",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"modules": {
+			"aneya/core": "1.0.0.0",
+			"aneya/filesystem": "1.0.0.0",
+			"aneya/security": "1.0.0.0"
+		},
+		"composer": {
+			"defuse/php-encryption": "2.0.3",
+			"league/climate": "^3.2"
+		}
+	}
+}

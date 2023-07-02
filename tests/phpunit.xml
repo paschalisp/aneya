@@ -1,0 +1,20 @@
+<phpunit colors="true" strict="true">
+	<testsuites>
+		<testsuite name="aneya Tests">
+			<directory>./</directory>
+		</testsuite>
+	</testsuites>
+	<filter>
+		<whitelist processUncoveredFilesFromWhitelist="false">
+			<directory suffix=".php">../modules</directory>
+			<directory suffix=".php">../www</directory>
+			<directory suffix=".php">../bin</directory>
+			<file>../aneya.php</file>
+			<file>../init.php</file>
+			<file>../routing.php</file>
+		</whitelist>
+		<blacklist>
+			<directory suffix=".php">../vendor</directory>
+		</blacklist>
+	</filter>
+</phpunit>

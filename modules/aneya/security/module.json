@@ -1,0 +1,28 @@
+{
+	"tag": "security",
+	"version": "1.0.0.0",
+	"title": "Security",
+	"name": "Security",
+	"author": "aneya",
+	"description": "aneya Framework's security module",
+	"minimumCoreVersion": "1.0.0.0",
+	"className": "Security",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"composer": {
+			"defuse/php-encryption": "2.1.*",
+			"firebase/php-jwt": "v5.0.*"
+		},
+		"modules": {
+			"aneya/core": "1.0.0.0"
+		}
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"tag": "filesystem",
+	"version": "1.0.0.0",
+	"name": "File System",
+	"description": "aneya Framework's file system module",
+	"className": "FileSystem",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"composer": {},
+		"modules": {
+			"aneya/core": "1.0.0.0"
+		}
+	}
+}

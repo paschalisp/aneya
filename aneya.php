@@ -1,0 +1,52 @@
+<?php
+/*
+ * aneya CMS & Framework
+ * Copyright (c) 2007-2022 Paschalis Pagonidis <p.pagonides@gmail.com>
+ * All rights reserved.
+ * -----------------------------------------------------------------------------
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * -----------------------------------------------------------------------------
+ * The Sole Developer of the Original Code is Paschalis Ch. Pagonidis
+ * Portions created by Paschalis Ch. Pagonidis are Copyright (C) 2007-2022
+ * Paschalis Ch. Pagonidis. All Rights Reserved.
+*/
+
+/* ------ aneya initialization, do not amend the code ------*/
+require_once(__DIR__ . '/modules/aneya/core/classes/Core/CMS.php');
+
+use aneya\Core\Application;
+use aneya\Core\CMS;
+
+// Set the base paths
+CMS::appPath(__DIR__);
+
+if (!session_id())
+	session_start();
+
+// Initialize the framework
+!defined('___BUILD___')
+	? CMS::init()
+	: CMS::init(false, true);
+
+// Call user-defined initialization
+require_once('init.php');
+
+// If no application was instantiated in user-defined initialization, force the creation of a default Application
+if (!isset(Application::$current)) {
+	new Application();
+	// Now CMS::app() returns the default Application instance
+}
+
+// Call user-defined request routing
+require_once('routing.php');

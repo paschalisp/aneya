@@ -1,0 +1,23 @@
+Options +FollowSymLinks +ExecCGI
+ServerSignature off
+DirectoryIndex index.html index.php
+
+<FilesMatch "(\.png|\.jpg|\.gif|\.jpeg|\.svg|\.svgz|\.bmp|\.css|\.js|\.txt|\.ico|\.map)$">
+	ErrorDocument 404 default
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Uncomment to redirect all requests to secure http
+	RewriteCond %{HTTPS} off
+	RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+	RewriteBase /
+
+	# Comment the following line if you need hardened security and fully controlled routing
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.svg|\.svgz|\.bmp|\.css|\.js|\.txt|\.ico|\.map)$
+	RewriteRule (.*) /index.php [QSA]
+</IfModule>

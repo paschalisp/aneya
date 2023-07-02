@@ -1,0 +1,36 @@
+{
+	"tag": "m17n",
+	"version": "1.0.0.0",
+	"name": "Multilingualization",
+	"description": "Core aneya multilingualization functionality",
+	"className": "M17N",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"modules": {
+			"aneya/core": "1.0.0"
+		}
+	},
+	"options": {
+		"languages": {
+			"en": {
+				"code": "en",
+				"abbr": "EN",
+				"name": "English",
+				"locale": "en-US"
+			}
+		},
+		"translations": {
+			"defaultLanguage": "en",
+			"useDefaultLanguageIfEmpty": true,
+			"sections": ["cms"]
+		}
+	}
+}

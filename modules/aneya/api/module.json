@@ -1,0 +1,38 @@
+{
+	"tag": "api",
+	"version": "1.0.0.0",
+	"name": "API",
+	"description": "Core aneya RESTful API module",
+	"className": "API",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes",
+		"/controllers"
+	],
+	"routes": [
+		{
+			"regex": "#^/api/(.*)?$#",
+			"controller": "aneya\\API\\Controllers\\ApiDefaultController",
+			"namespace": "*",
+			"priority": 999999
+		}
+	],
+	"requires": {
+		"modules": {
+			"aneya/core": "1.0.0.0",
+			"aneya/forms": "1.0.0.0",
+			"aneya/routing": "1.0.0.0",
+			"aneya/security": "1.0.0.0",
+			"aneya/snippets": "1.0.0.0"
+		},
+		"composer": {
+			"defuse/php-encryption": "2.0.3",
+			"firebase/php-jwt": "v5.0.0"
+		}
+	}
+}

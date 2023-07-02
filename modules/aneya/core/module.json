@@ -1,0 +1,37 @@
+{
+	"tag": "core",
+	"version": "1.0.0.0",
+	"name": "Core",
+	"description": "aneya Framework's core module",
+	"className": "Core",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"composer": {
+			"defuse/php-encryption": "2.1.0",
+			"firebase/php-jwt": "v5.0.0",
+			"monolog/monolog": "1.23.0",
+			"phpmailer/phpmailer": "v5.2.22",
+			"ext-gd": "*",
+			"ext-zlib": "*"
+		},
+		"modules": {
+			"aneya/debug": "1.0.0.0",
+			"aneya/expressions": "1.0.0.0",
+			"aneya/filesystem": "1.0.0.0",
+			"aneya/structures": "1.0.0.0"
+		}
+	},
+	"requiresDev": {
+		"composer": {
+			"phpunit/phpunit": "6.5.4"
+		}
+	}
+}

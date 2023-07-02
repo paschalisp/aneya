@@ -1,0 +1,22 @@
+{
+	"tag": "structures",
+	"version": "1.0.0.0",
+	"name": "Structures",
+	"description": "aneya Framework's complex structures module",
+	"className": "Structures",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"composer": {},
+		"modules": {
+			"aneya/core": "1.0.0.0"
+		}
+	}
+}

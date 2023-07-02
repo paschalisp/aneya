@@ -1,0 +1,33 @@
+{
+	"tag": "routing",
+	"version": "1.0.0.0",
+	"name": "Routing",
+	"description": "Core aneya HTTP/Websockets routing module",
+	"className": "Routing",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"routes": [
+		{
+			"regex": "#/(.*)?#",
+			"controller": "aneya\\Routing\\Controllers\\DummyController",
+			"namespace": "*",
+			"priority": 9999999
+		}
+	],
+	"requires": {
+		"composer": {
+			"guzzlehttp/psr7": "1.5.*"
+		},
+		"modules": {
+			"aneya/core": "1.0.0.0",
+			"aneya/security": "1.0.0.0"
+		}
+	}
+}

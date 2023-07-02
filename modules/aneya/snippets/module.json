@@ -1,0 +1,22 @@
+{
+	"tag": "snippets",
+	"version": "1.0.0.0",
+	"name": "Snippets",
+	"description": "Built-in aneya templating engine",
+	"className": "Snippets",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"modules": {
+			"aneya/core": "1.0.0.0",
+			"aneya/m17n": "1.0.0.0"
+		}
+	}
+}

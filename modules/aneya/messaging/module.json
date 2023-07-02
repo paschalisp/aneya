@@ -1,0 +1,45 @@
+{
+	"tag": "messaging",
+	"version": "1.0.0.0",
+	"name": "Messaging",
+	"description": "Messaging module for aneya",
+	"className": "Messaging",
+	"license": "Commercial",
+	"vendor": {
+		"tag": "aneya",
+		"name": "aneya",
+		"email": "p.pagonides@gmail.com",
+		"url": "http://www.aneyacms.com",
+		"updates": {
+			"url": "http://www.aneyacms.com/en/update?tag=messaging"
+		}
+	},
+	"bugs": {
+		"url": "http://www.aneyacms.com/en/bugs"
+	},
+	"autoload": [
+		"/classes"
+	],
+	"requires": {
+		"modules": {
+			"aneya/core": "1.0.0.0",
+			"aneya/cms": "1.0.0.0",
+			"aneya/security": "1.0.0.0"
+		}
+	},
+	"suggests": {
+		"node": {
+			"uuid": "^3.3.2"
+		}
+	},
+	"options": {
+		"socketio": {
+			"mongodb": {
+				"url": "mongodb://localhost:27017",
+				"db": "chats",
+				"collection": "messaging",
+				"options": {}
+			}
+		}
+	}
+}
