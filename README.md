@@ -105,11 +105,16 @@ class Contact extends DataObject { // DataObject class automates all ORM-related
     
     // Override the Storable::onORM method to tell the framework which exact table shall this class be related to
     protected static function onORM(): DataObjectMapping {
-        $ds = static::classDataSet(CMS::db()->schema->getDataSet('contacts', null /* fetch all available fields */, true /* true to name all columns in camelCase */));
-        $ds->mapClass(static::class);
+        // Setup class's dataset (can join tables if class's properties point to more than a single table)
+        $ds = CMS::db()->schema->getDataSet('contacts', null /* fetch all available fields */, true /* true to name all columns in camelCase */);
+        
+        // Now map the class with the database 
+        static::classDataSet($ds);
+
+        // Instantiate the ORM object (as the function has to return it)
         $orm = ORM::dataSetToMapping($ds, static::class);
 
-        // In case a class property has different name from the mapped table
+        // In case a class property has different name than the equivalent table column
         $orm->getProperty('contactId')->propertyName = 'id';
 
         return $orm;
