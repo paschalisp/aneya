@@ -96,7 +96,7 @@ else {
 Setup ORM in a class and retrieve/save changes to an instantiated object:
 ```php
 class Contact extends CoreObject implements IDataObject, IStorable {
-	use Storable; // Storable trait automates all ORM-related setups out-of-the-box
+    use Storable; // Storable trait automates all ORM-related setups out-of-the-box
 
     public int $id;
     public string $firstName;
@@ -108,12 +108,12 @@ class Contact extends CoreObject implements IDataObject, IStorable {
     protected static function onORM(): DataObjectMapping {
         $ds = static::classDataSet(CMS::db()->schema->getDataSet('contacts', null /* fetch all available fields */, true /* true to name all columns in camelCase */));
         $ds->mapClass(static::class);
-		$orm = ORM::dataSetToMapping($ds, static::class);
-		
-		// In case a class property has different name from the mapped table
-		$orm->getProperty('contactId')->propertyName = 'id';
-		
-		return $orm;
+        $orm = ORM::dataSetToMapping($ds, static::class);
+
+        // In case a class property has different name from the mapped table
+        $orm->getProperty('contactId')->propertyName = 'id';
+
+        return $orm;
     }
 }
 
