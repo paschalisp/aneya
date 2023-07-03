@@ -95,9 +95,8 @@ else {
 
 Setup ORM in a class and retrieve/save changes to an instantiated object:
 ```php
-class Contact extends CoreObject implements IDataObject, IStorable {
-    use Storable; // Storable trait automates all ORM-related setups out-of-the-box
-
+class Contact extends DataObject { // DataObject class automates all ORM-related setups out-of-the-box
+    // Define few properties
     public int $id;
     public string $firstName;
     public string $lastName;
